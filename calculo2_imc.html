@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo IMC</title>
+   <style>
+      body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;         
+            background-color: #f8e2f3;
+            background-image: url('image_imc.jpg');
+			background-size: 1400px 700px;
+			background-repeat: no-repeat;
+			background-position: center top;
+        }
+
+        
+    #mensagem.green {
+        background-color: green;
+        }
+
+        #mensagem.orange {
+            background-color: orange;
+        }
+
+        #mensagem.red {
+            background-color: red;
+        }
+        #mensagem {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        
+        }
+        .center{
+            text-align: center;
+        }
+        .fild {
+			border: 0cap;
+			border-radius: 70px;
+			width: 200px;
+			height: 200px;
+			padding: 50px;
+			text-align: center;
+				
+		}
+   </style>
+   <script>
+        function calcularIMC(event){
+            event.preventDefault();
+          
+            var peso = document.getElementById("peso").value;
+            var altura = document.getElementById("altura").value;
+            var imc = peso/ (altura*altura);
+            var mensagem = "";
+            var resultadoElement = document.getElementById("mensagem");
+            if(imc < 17) {
+                mensagem = "Muito abaixo do peso";
+                resultadoElement.className = "red";
+            } else if (imc >= 17 && imc <= 18.49){
+                mensagem = "Abaixo do peso";
+                resultadoElement.className = "orange";
+            } else if (imc >= 18.50 && imc <= 24.99){
+                mensagem = "Peso normal";
+                resultadoElement.className = "green";
+            } else if (imc >= 25 && imc <= 29.99){
+                mensagem = "Acima do peso";
+                resultadoElement.className = "orange";
+            } else if (imc >= 30 && imc <= 34.99){
+                mensagem = "Obesidade I";
+                resultadoElement.className = "red";
+            } else if (imc >= 35 && imc <= 39.99){
+                mensagem = "Obesidade II";
+                resultadoElement.className = "red";
+            } else {
+                mensagem = "Obesidade III";
+                resultadoElement.className = "red";
+            }
+            document.getElementById("resultado").innerHTML = "Seu IMC é: " + imc.toFixed(2);
+            document.getElementById("mensagem").innerHTML = mensagem;
+        }
+
+        function formatarAltura() {
+            var alturaInput = document.getElementById("altura");
+            var altura = alturaInput.value;
+            var altura = alturaInput.value.replace(".", "")
+
+            if (altura.length === 1) {
+                alturaInput.value = altura;
+            } else if (altura.length === 2) {
+                alturaInput.value = altura.slice(0, -1) + "." + altura.slice(-1);
+            }
+             else if (altura.length > 2) {
+                alturaInput.value = altura.slice(0, -2) + "." + altura.slice(-2);
+            }
+        }
+
+               
+    </script>
+</head>
+<body >
+
+
+<form onsubmit="calcularIMC(event)">
+<fieldset class="fild">
+    <legend>Cálculo Índice de Massa Corporal- IMC</legend>
+    <label class="center" for="peso">Seu Peso:</label><br>
+    <input class="center" type="text" id="peso" name="peso"><br>
+    <label class="center" for="altura">Sua Altura:</label><br>
+    <input class="center" type="text" id="altura" name="altura" oninput="formatarAltura()"><br><br>
+    <input class="center" type="submit" value="Calcular">
+</fieldset>
+</form>
+<div id="resultado"></div><br>
+<div id="mensagem"></div>
+
+<p class="p_img"><a href="index.html"><img src="volta_icon.png" alt="voltar" style="padding-right: 0%;" width="35" height="35"></a></a></p>
+
+</body>
+
+</html>
