@@ -1,2 +1,8 @@
 # js_exercicios
 Trabalho de Padrões Web - JavaScript - professor Araya
+Grupo:
+DANIELA BELO
+GUSTAVO FERREIRA PASSOS
+MARCELLE MARTINS LEMES
+MARIA EZÍDIA ARAÚJO
+LIDIARD NUNES DE OLIVEIRA
