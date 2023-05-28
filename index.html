@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário HTML - PW</title>
+    <style>
+        body {
+            
+            background-color: rgb(67, 115, 139);
+            text-align: justify;
+            font-size: clamp(1em, 1em + 1vw, 1.5em);
+
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 160%;
+            color: rgb(189, 210, 228);
+            background-color: rgb(5, 95, 131);
+            display: block;
+            margin: auto;
+        }
+
+        h2,
+        h3 {
+            color: antiquewhite;
+            text-align: center;
+        }
+
+        .h3 {
+            color: rgb(211, 233, 113);
+            font-size: 70%;
+            text-align: left;
+            text-decoration: double;
+            text-underline-position: above;
+        }
+
+        .imagem2 {
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .imagem2:hover {
+            -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+            filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+        }
+
+        .button1 {
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .button1:hover {
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+
+        #page-container {
+            position: relative;
+            min-height: 20vh;
+        }
+
+        #content-wrap {
+            padding-bottom: 0.5rem;
+            /* altura do rodapé */
+        }
+
+        #footer {
+            color: rgb(188, 227, 245);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JAVASCRIPT</h2>
+
+    <h3>Trabalho de Padrões Web - Prof. Márcio Araya</h3>
+
+    <h3 class="h3">Grupo:</h3>
+    <p class="h3">DANIELA BELO</p>
+    <P class="h3">GUSTAVO FERREIRA PASSOS</P>
+    <P class="h3">MARCELLE MARTINS LEMES</P>
+    <P class="h3">MARIA EZÍDIA ARAÚJO</P>
+    <P class="h3">LIDIARD NUNES DE OLIVEIRA</P>
+
+    <div>
+        
+        <h3><strong>JavaScript - exercícios</strong></h3>
+
+        <button class="button1" onclick="document.location='media_aluno.html'">Atividade 1 - Média aluno</button>
+        <button class="button1" onclick="document.location='formulario1.html'">Atividade 2 - </button>
+        <button class="button1" onclick="document.location='calculo1_IMC.html'">Atividade 3 - IMC</button>
+        <button class="button1" onclick="document.location='appendChild.html'">Atividade 4 - AppendChild</button><br><br>
+
+     
+    </div>
+
+    
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- o resto do conteúdo da página -->
+        </div>
+        <footer id="footer">Faculdade Senac - Gestão da Tecnologia da Informação</footer>
+        <p><img src="logo-white.png" alt="" width="70" height="60"></p>
+    </div>
+
+</body>
+
+</html>

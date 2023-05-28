@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="text"] {
+          margin-right: 10px;
+        }
+        
+        label {
+          margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lista Supermercado</h2>
+
+<div>
+  <input type="text" id="itemInput" placeholder="Item">
+  <label><input type="radio" name="cores" value="yellow">Amarelo</label>
+  <label><input type="radio" name="cores" value="blue">Azul</label>
+  <label><input type="radio" name="cores" value="red">Vermelo</label>
+  <button onclick="addItem()">Adicionar Item</button>
+</div>
+
+<ul id="myList">
+  <li>Geléia</li>
+  <li>Whisky</li>
+  <li>Tofu</li>
+</ul>
+
+<p class="p_img"><a href="index.html"><img src="volta_icon.png" alt="voltar" style="padding-right: 0%;" width="35" height="35"></a></a></p>
+
+
+<script>
+function addItem() {
+  var itemInput = document.getElementById("itemInput");
+  var item = itemInput.value;
+
+  var cor = document.querySelector('input[name="cores"]:checked').value;
+
+  var newItem = document.createElement("li");
+  newItem.textContent = item;
+  newItem.style.color = cor;
+
+  var list = document.getElementById("myList");
+  list.appendChild(newItem);
+
+  itemInput.value = "";
+}
+</script>
+    
+</body>
+</html>
