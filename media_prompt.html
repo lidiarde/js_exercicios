@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Média</title>
+  <style>
+    .aprovado {
+      color: blue;
+    }
+    .reprovado {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Média</h1>
+
+  <script>
+    
+    var nota1 = parseFloat(prompt("Digite a primeira nota:"));
+
+    
+    var nota2 = parseFloat(prompt("Digite a segunda nota:"));
+
+    
+    var media = (nota1 + nota2) / 2;
+
+    
+    var situacao;
+    var cor;
+
+    if (media >= 6) {
+      situacao = "APROVADO";
+      cor = "aprovado";
+    } else {
+      situacao = "REPROVADO";
+      cor = "reprovado";
+    }
+
+    
+    document.write("Média: <span id='media'>" + media + "</span><br>");
+    document.write("Situação: <span class='" + cor + "'>" + situacao + "</span>");
+  </script>
+
+  <p class="p_img"><a href="index.html"><img src="volta_icon.png" alt="voltar" style="padding-right: 0%;" width="35" height="35"></a></a></p>
+
+</body>
+</html>
